@@ -1,0 +1,70 @@
+
+        <main class="flex-1 overflow-y-auto bg-slate-100 ">   
+            <div class="bg-white border border-slate-200 rounded-xl shadow-sm overflow-hidden">
+                <div class="px-5 py-4 border-b border-slate-100 flex justify-between items-center bg-slate-50/50">
+                    <h3 class="font-medium text-slate-700 text-sm">Lista de Processos</h3>
+                    <div class="flex items-center gap-2 text-sm text-slate-500">
+                        Ordenar por: 
+                        <select class="bg-transparent font-medium text-slate-700 focus:outline-none cursor-pointer">
+                            <option>Mais recentes</option>
+                            <option>Valor (Maior-Menor)</option>
+                        </select>
+                    </div>
+                </div>
+                
+                <div class="overflow-x-auto">
+                <table class="w-full text-left text-sm text-slate-600">
+                    <thead class="bg-slate-50 text-xs uppercase text-slate-500 font-semibold border-b border-slate-200">
+                    <tr>
+                        <th class="px-5 py-3">Processo / Edital</th>
+                        <th class="px-5 py-3">Objeto</th>
+                        <th class="px-5 py-3">Modalidade</th>
+                        <th class="px-5 py-3">Situação</th>
+                        <th class="px-5 py-3 text-right">Ação</th>
+                    </tr>
+                    </thead>
+
+                    <tbody class="divide-y divide-slate-100">
+                    <tr
+                        *ngFor="let licitacao of licitacoes"
+                        class="hover:bg-slate-50 transition cursor-pointer"
+                    >
+                        <td class="px-5 py-4">
+                        <div class="font-medium text-sajBlue">
+                            {{ licitacao.numeroProcesso }}
+                        </div>
+                        <div class="text-xs text-slate-400 mt-0.5">
+                            {{ licitacao.numeroLicitacao }}
+                        </div>
+                        </td>
+
+                        <td class="px-5 py-4 min-w-[250px]">
+                        {{ licitacao.objeto }}
+                        </td>
+
+                        <td class="px-5 py-4">
+                        <span class="inline-flex items-center px-2 py-1 rounded-md bg-slate-100 text-slate-600 text-xs font-medium">
+                            {{ licitacao.modalidade }}
+                        </span>
+                        </td>
+
+                        <td class="px-5 py-4">
+                        <span
+                            class="inline-flex items-center px-2.5 py-1 rounded-full text-xs font-medium"
+                            [ngClass]="getPrioridadeClasses(licitacao.status)"
+                        >
+                            {{ licitacao.status }}
+                        </span>
+                        </td>
+
+                        <td class="px-5 py-4 text-right">
+                        <button class="text-slate-400 hover:text-sajBlue">
+                            <i class="ti ti-chevron-right text-lg"></i>
+                        </button>
+                        </td>
+                    </tr>
+                    </tbody>
+                </table>
+            </div>
+         </div>
+    </main>

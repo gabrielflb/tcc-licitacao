@@ -1,0 +1,60 @@
+<div class="flex h-screen bg-gray-50 font-sans">
+
+  <aside class="w-70 bg-white border-r border-gray-200 p-6 overflow-y-auto hidden md:block">
+    <h2 class="text-sm font-semibold text-black-500 uppercase tracking-wider mb-6">
+      Filtros
+    </h2>
+    
+    <div class="mb-4">
+      <label class="block text-sm font-medium text-gray-700 mb-1">Palavra-chave</label>
+      <input type="text" placeholder="ex: merenda, asfalto..." 
+             class="w-full rounded-md border-gray-300 shadow-sm focus:border-blue-500 focus:ring-blue-500 sm:text-sm">
+    </div>
+    
+    </aside>
+
+  <main class="flex-1 p-8 overflow-y-auto">
+    <app-sidebar></app-sidebar>
+    
+    <div class="bg-yellow-50 border-l-4 border-yellow-400 p-4 mb-8 rounded-r-md">
+      <p class="text-sm text-yellow-700">
+        <span class="font-bold">5 Licitações</span> encerram nos próximos 7 dias.
+      </p>
+    </div>
+
+    <div class="grid grid-cols-1 md:grid-cols-4 gap-4 mb-8">
+      
+      <div class="bg-gray-800 rounded-lg p-6 shadow-sm text-white">
+        <h3 class="text-gray-400 text-sm font-medium mb-2">Total de Processos</h3>
+        <p class="text-3xl font-bold">147</p>
+        <p class="align-bottom">processos em + ano </p>
+      </div>
+
+        <div class="bg-gray-800 rounded-lg p-6 shadow-sm text-red-800">
+        <h3 class="text-sm font-medium mb-2">Processos Abertos</h3>
+        <p class="text-3xl font-bold">200</p>
+        <p class="align-bottom">propostas aceitas</p>
+      </div>
+
+      <div class="bg-gray-800 rounded-lg p-6 shadow-sm text-blue-800">
+            <h3 class="text-sm font-medium mb-2">
+                Em andamento
+            </h3>
+            <p class="text-3xl font-bold">100</p>
+            <p class="align-bottom">em análise</p>
+      </div>
+      
+      </div>
+      <app-components-grid-licitacoes></app-components-grid-licitacoes>
+      
+
+    <div class="bg-white rounded-lg shadow-sm border border-gray-200 p-6">
+      <h3 class="text-lg font-medium text-gray-900 mb-4">Processos Licitatórios</h3>
+      
+      <div class="text-center text-gray-500 py-10 border-2 border-dashed border-gray-200 rounded-md">
+        Espaço reservado para o &lt;app-tabela-licitacoes&gt;
+      </div>
+    </div>
+
+  </main>
+</div>
